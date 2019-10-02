@@ -7,7 +7,7 @@ import argparse
 import os
 
 
-def get_args():
+def get_args() -> None:
     """
     Gets args from user
     """
@@ -24,7 +24,7 @@ def get_args():
     return parser.parse_args() 
 
 
-def compare(image1, image2, threshold):
+def compare(image1: str, image2: str, threshold: int) -> []:
     """
     Compares Image1 and Image2 and return a array containing the difference
     """
@@ -43,7 +43,7 @@ def compare(image1, image2, threshold):
     return [p2 if diff(p1, p2) else (0, 0, 0) for p1, p2 in zip(pixels1, pixels2)]
 
 
-def get_size(image1, image2):
+def get_size(image1: str, image2: str) -> int:
     """
     Gets images size and validates it's the same
     """
@@ -61,7 +61,7 @@ def get_size(image1, image2):
     return img1.size
 
 
-def save(array, size, path):
+def save(array: [], size: int, path: str) -> None:
     """
     Saves output image
     """
@@ -70,7 +70,7 @@ def save(array, size, path):
     output_image.putdata(array)
     output_image.save(path)
 
-def main():
+def main() -> None:
 
     args = get_args()
 
