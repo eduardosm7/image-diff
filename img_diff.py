@@ -43,7 +43,7 @@ def compare(image1: str, image2: str, threshold: int) -> []:
     return [p2 if diff(p1, p2) else (0, 0, 0) for p1, p2 in zip(pixels1, pixels2)]
 
 
-def get_size(image1: str, image2: str) -> int:
+def get_size(image1: str, image2: str) -> (int, int):
     """
     Gets images size and validates it's the same
     """
